@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "dinject/version"
+require_relative "dep_inject/version"
 
-module Dinject
+module DepInject
   class PublicMethodError < StandardError; end
 
   def self.included(base)

@@ -13,7 +13,7 @@ class MockTaskManager
 end
 
 class ValidUseCase
-  include Dinject
+  include DepInject
 
   provide(
     logger: MockLogger,
@@ -33,7 +33,7 @@ class ValidUseCase
 end
 
 class MockAddTaskCommand
-  include Dinject
+  include DepInject
   provide()
   def execute(name)
     "Task #{name} created"
@@ -41,7 +41,7 @@ class MockAddTaskCommand
 end
 
 class OtherValidUseCase
-  include Dinject
+  include DepInject
 
   provide(
     logger: MockLogger,
@@ -56,7 +56,7 @@ end
 
 
 class InvalidUseCase
-  include Dinject
+  include DepInject
 
   provide(
     logger: MockLogger
@@ -64,7 +64,7 @@ class InvalidUseCase
 end
 
 class InvalidPublicMethodUseCase
-  include Dinject
+  include DepInject
 
   provide(
     logger: MockLogger
@@ -79,9 +79,9 @@ class InvalidPublicMethodUseCase
   end
 end
 
-RSpec.describe Dinject do
+RSpec.describe DepInject do
   it "has a version number" do
-    expect(Dinject::VERSION).not_to be nil
+    expect(DepInject::VERSION).not_to be nil
   end
 
   describe 'class using dependency injection with valid pattern' do
@@ -102,7 +102,7 @@ RSpec.describe Dinject do
     end
   end
 
-  describe 'injects dependency also using dinject' do
+  describe 'injects dependency also using DepInject' do
     let(:usecase) { OtherValidUseCase.build }
 
     it 'injects the dependencies properly' do
@@ -128,7 +128,7 @@ RSpec.describe Dinject do
 
   describe 'class with extra public method' do
     it 'raises PublicMethodError if extra public method is defined' do
-      expect { InvalidPublicMethodUseCase.build }.to raise_error(Dinject::PublicMethodError, "Class InvalidPublicMethodUseCase should only define `execute` as a public method. Additional public methods: extra_public_method")
+      expect { InvalidPublicMethodUseCase.build }.to raise_error(DepInject::PublicMethodError, "Class InvalidPublicMethodUseCase should only define `execute` as a public method. Additional public methods: extra_public_method")
     end
   end
 

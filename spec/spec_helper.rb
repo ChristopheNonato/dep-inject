@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "dinject"
+require "dep_inject"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

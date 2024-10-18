@@ -1,6 +1,6 @@
-# Dinject
+# Dep-inject
 
-Dinject is a simple Ruby gem that allows for clean and flexible dependency injection in Ruby classes. It provides a constructor method (`build`) and enforces a single public method (`execute`) to encourage well-structured use cases and services. The gem raises errors if other public methods are defined, ensuring that classes stay focused on a single responsibility.
+Dep-inject is a simple Ruby gem that allows for clean and flexible dependency injection in Ruby classes. It provides a constructor method (`build`) and enforces a single public method (`execute`) to encourage well-structured use cases and services. The gem raises errors if other public methods are defined, ensuring that classes stay focused on a single responsibility.
 
 ## Features
 
@@ -13,16 +13,16 @@ Dinject is a simple Ruby gem that allows for clean and flexible dependency injec
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'dinject'
+gem 'dep-inject'
 ```
 
 Then bundle install
 
 ## Usage
 
-To use Dinject, include the module in your class, specify your dependencies, and define the execute method. Dinject will handle the injection of the specified dependencies and enforce that only execute is exposed as a public method.
+To use DepInject, include the module in your class, specify your dependencies, and define the execute method. DepInject will handle the injection of the specified dependencies and enforce that only execute is exposed as a public method.
 
-Dependencies can be any class or object. Dinject will initialize and inject them into your use case at runtime. The dependencies are injected as instance variables with the same name as the keys passed in provide.
+Dependencies can be any class or object. DepInject will initialize and inject them into your use case at runtime. The dependencies are injected as instance variables with the same name as the keys passed in provide.
 
 ### Basic Example
 
@@ -40,7 +40,7 @@ class MockTaskManager
 end
 
 class TaskUseCase
-  include Dinject
+  include DepInject
 
   provide(
     logger: MockLogger,
