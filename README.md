@@ -39,6 +39,7 @@ class MockTaskManager
   end
 end
 
+require 'dep_inject'
 class TaskUseCase
   include DepInject
 
