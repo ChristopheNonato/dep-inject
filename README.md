@@ -1,6 +1,6 @@
 # Dep-inject
 
-Dep-inject is a simple Ruby gem that allows for clean and flexible dependency injection in Ruby classes. It provides a constructor method (`build`) and enforces a single public method (`execute`) to encourage well-structured use cases and services. The gem raises errors if other public methods are defined, ensuring that classes stay focused on a single responsibility.
+Dep-inject is a simple Ruby gem that allows for clean and flexible dependency injection in Ruby classes. It provides a constructor method (`build`) and enforces a single public method (`execute`) to encourage well-structured use cases and services. The gem raises errors if other public methods are defined, ensuring that classes stay focused on a single responsibility. By injecting dependencies, the design becomes more flexible and maintainable, allowing for easier updates and replacements of components.
 
 ## Features
 
