@@ -3,15 +3,15 @@
 require_relative "lib/dep_inject/version"
 
 Gem::Specification.new do |spec|
-  spec.name    = "dep-inject"
+  spec.name = "dep-inject"
   spec.version = DepInject::VERSION
   spec.authors = ["christophenonato"]
-  spec.email   = ["chr.nonato@protonmail.com"]
+  spec.email = ["chr.nonato@protonmail.com"]
 
-  spec.summary       = "A lightweight dependency injection gem"
-  spec.description   = "DepInject helps to inject dependencies into your classes, enforcing public method restrictions."
-  spec.homepage      = "https://github.com/christophenonato/dep-inject"
-  spec.license       = "MIT"
+  spec.summary = "A lightweight dependency injection gem"
+  spec.description = "DepInject helps to inject dependencies into your classes, enforcing public method restrictions."
+  spec.homepage = "https://github.com/christophenonato/dep-inject"
+  spec.license = "MIT"
   spec.required_ruby_version = ">= 3.0.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
