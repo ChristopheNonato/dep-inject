@@ -20,7 +20,7 @@ Then bundle install
 
 ## Usage
 
-To use DepInject, include the module in your class, specify your dependencies, and define the execute method. DepInject will handle the injection of the specified dependencies and enforce that only execute is exposed as a public method.
+To use DepInject, include the module in your class, specify your dependencies, and define the execution method. DepInject will handle the injection of the specified dependencies and enforce that only a valid execution method is exposed as a public method. The execution or trigger methods are `execute` and `call`, use one or the other in your class.
 
 Dependencies can be any class or object. DepInject will initialize and inject them into your use case at runtime. The dependencies are injected as instance variables with the same name as the keys passed in provide.
 
